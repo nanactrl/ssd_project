@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-      <!-- Meta tags for SEO -->
+    <!-- Meta tags for SEO -->
     <meta name="description" content="Manage your tasks efficiently with this to-do application. Sign in to organize your daily activities and track your progress." />
     <meta name="keywords" content="to-do app, task manager, productivity, login, authentication, Django" />
     <meta name="author" content="Marko Henrik Hautala" />
@@ -30,41 +30,89 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
 
-    <title>To-do Application</title>
+    <title>{% block title %}To-do Application{% endblock %}</title>
     <link rel="icon" href="{% static 'images/favicon.ico' %}">
     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/apple-touch-icon.png' %}">
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon-32x32.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon-16x16.png' %}">
 
-
     <link rel="stylesheet" href="{% static 'styles.css' %}">
   </head>
   <body>
-    <div class="main-content-container">
-      {% block content %} {% endblock content %}
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm sticky-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold fs-4" href="{% url 'home' %}">
+          <i class="fas fa-tasks me-2"></i>To-Do App
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="#navbarNav">
+          <ul class="navbar-nav ms-auto align-items-center">
+            {% if user.is_authenticated %}
+              <li class="nav-item">
+                <a class="nav-link px-3" href="{% url 'tasks' %}">Tasks</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link px-3" href="{% url 'profile' %}">Profile</a>
+              </li>
+              <!-- ADMIN-ONLY AUDIT LOG LINK (CORRECTED SYNTAX) -->
+              {% for group in user.groups.all %}
+                {% if group.name == 'Admin' %}
+                  <li class="nav-item">
+                    <a class="nav-link px-3 text-warning fw-bold" href="{% url 'audit_log' %}">
+                      <i class="fas fa-file-alt me-1"></i>Audit Log
+                    </a>
+                  </li>
+                {% endif %}
+              {% endfor %}
+              <!-- SECURE LOGOUT (POST METHOD) -->
+              <li class="nav-item">
+                <form action="{% url 'logout' %}" method="post" class="d-inline">
+                  {% csrf_token %}
+                  <button type="submit" class="nav-link btn btn-outline-light px-4 border-0 bg-transparent text-white">
+                    Logout
+                  </button>
+                </form>
+              </li>
+            {% else %}
+              <li class="nav-item">
+                <a class="nav-link px-3" href="{% url 'login' %}">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link btn btn-outline-light px-4" href="{% url 'register' %}">Register</a>
+              </li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content-container py-4">
+      {% block content %}
+      {% endblock content %}
     </div>
 
-    <!--This code gives a cpyright symbol with a year that automatically updates every year-->
-    <footer>
-      <p class="copyright">Copyright &copy; <span id="copyright"></span></p>
-      <div class="social-links">
-        <!-- GitHub icon link -->
-        <a
-          href="https://github.com/markohautala"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i class="fab fa-github"></i>
-        </a>
-
-        <!-- LinkedIn icon link -->
-        <a
-          href="https://www.linkedin.com/in/markohautala"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i class="fab fa-linkedin-in"></i>
-        </a>
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-auto">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <p class="copyright mb-0">Copyright &copy; <span id="copyright"></span></p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <div class="social-links">
+              <a href="https://github.com/markohautala" target="_blank" rel="noopener noreferrer" class="text-white me-3">
+                <i class="fab fa-github fa-lg"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/markohautala" target="_blank" rel="noopener noreferrer" class="text-white">
+                <i class="fab fa-linkedin-in fa-lg"></i>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
 

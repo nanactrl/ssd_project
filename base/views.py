@@ -1,4 +1,4 @@
-from .models import Task
+from .models import Task, AuditLog  # ← Added AuditLog here
 # This is the method that will be used to log in the user
 from django.contrib.auth import login
 # This is the form that will be used to create a new user
@@ -11,6 +11,8 @@ from django.shortcuts import render, redirect
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView, FormView
+from django.http import HttpResponseForbidden  # ← Added for admin-only check
+
 
 # LoginView in top because it is a gatekeeper for users to access the app
 
@@ -87,3 +89,43 @@ class DeleteTask(LoginRequiredMixin, DeleteView):
     context_object_name = 'todo_tasks'
     success_url = reverse_lazy('tasks')
     template_name = 'base/task_confirm_delete.html'
+
+
+# ========================
+# USER PROFILE PAGE VIEW
+# ========================
+class ProfileView(LoginRequiredMixin, TemplateView):
+    template_name = 'base/profile.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['user_profile'] = self.request.user
+        
+        # Optional: Show count of incomplete tasks on profile
+        context['incomplete_tasks_count'] = Task.objects.filter(
+            user=self.request.user,
+            complete=False
+        ).count()
+        
+        return context
+
+
+# ========================
+# AUDIT LOG VIEW (ADMIN ONLY)
+# ========================
+class AuditLogView(LoginRequiredMixin, TemplateView):
+    template_name = 'base/audit_log.html'
+
+    def dispatch(self, request, *args, **kwargs):
+        # Only allow users in 'Admin' group
+        if not request.user.groups.filter(name='Admin').exists():
+            return HttpResponseForbidden(
+                "You do not have permission to access the audit log."
+            )
+        return super().dispatch(request, *args, **kwargs)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # Show latest 100 logs (newest first)
+        context['logs'] = AuditLog.objects.all()[:100]
+        return context
