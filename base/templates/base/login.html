@@ -1,0 +1,30 @@
+{% extends 'base/main.html' %}
+
+{% block content %}
+    <h1>Login here</h1>
+
+    <div class="login-body">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <!-- Login button with icon -->
+            <button type="submit" class="form-input-button">
+                Login <span class="material-symbols-outlined">
+                    login
+                    </span>
+            </button>
+        </form>
+    </div>
+
+    <br>
+    <br>
+
+    <p>Are you a new user and need to create an account?   <a href="{% url 'register' %}">Register here!</a></p>
+
+    <hr>
+
+    <p class="text-center">Return to the homepage  <a id="home-button" href="{% url 'home' %}">Home<span class="material-symbols-outlined">
+        home
+    </span></a></p>
+{% endblock content %}
