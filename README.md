@@ -479,3 +479,38 @@ To deploy this Django project, follow these steps to fork and clone the reposito
 - Leveraged [Heroku Dev Center](https://devcenter.heroku.com/categories/reference) documentation for debugging purposes.
 
 - Incorporated Google Fonts icons from [Google Fonts](https://fonts.google.com/icons) for iconography throughout the application.
+
+## Installation and Running
+
+### Prerequisites
+- Python 3.8+ (download from python.org)
+- Git (for cloning)
+
+### Setup Steps
+1. Clone the repo:git clone https://github.com/nanactrl/ssd_project.git
+cd ssd_project
+
+2. Create and activate virtual environment:
+python -m venv venv
+Windows:venv\Scripts\activate.bat
+Mac/Linux:source venv/bin/activate
+
+3. Install dependencies: pip install -r requirements.txt
+
+4. Copy .env.example to .env and edit with your values (e.g., SECRET_KEY):
+copy .env.example .env  # Windows; or cp on Mac/Linux
+
+5. Run migrations and create superuser:
+python manage.py migrate
+python manage.py createsuperuser
+
+6. Start the server:python manage.py runserver
+
+Open http://127.0.0.1:8000/ in your browser.
+
+### Dependencies
+See `requirements.txt` for full list (e.g., Django 4.x, djangorestframework).
+
+### Notes
+- Deactivate venv with `deactivate`.
+- For production, use a real DB (e.g., Postgres) and set DEBUG=False.
