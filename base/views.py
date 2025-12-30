@@ -13,7 +13,7 @@ from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView, FormView
 from django.http import HttpResponseForbidden  # ← Added for admin-only check
 # ← NEW: Import for MFA hook (optional; requires django-otp installed)
-from django_otp import devices_for_user
+#from django_otp import devices_for_user
 
 
 # LoginView in top because it is a gatekeeper for users to access the app
