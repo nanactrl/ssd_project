@@ -1,12 +1,19 @@
 from django.contrib.auth.models import User, Group
+<<<<<<< HEAD
 from django.contrib.auth.signals import user_logged_in, user_login_failed, user_logged_out
 from django.db.models.signals import post_save, post_delete
 from django.dispatch import receiver
 from django.utils.timezone import now
+=======
+from django.contrib.auth.signals import user_logged_in
+from django.db.models.signals import post_save, post_delete
+from django.dispatch import receiver
+>>>>>>> d37cbd7bcc9fd181b230781706a15cba0601bf65
 
 from .models import Task, AuditLog
 
 
+<<<<<<< HEAD
 def get_client_ip(request):
     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
     if x_forwarded_for:
@@ -16,6 +23,8 @@ def get_client_ip(request):
     return ip
 
 
+=======
+>>>>>>> d37cbd7bcc9fd181b230781706a15cba0601bf65
 # === RBAC: Auto-add new users to "Normal User" group ===
 @receiver(post_save, sender=User)
 def add_user_to_normal_group(sender, instance, created, **kwargs):
@@ -29,6 +38,7 @@ def add_user_to_normal_group(sender, instance, created, **kwargs):
 
 # === AUDIT LOGGING ===
 
+<<<<<<< HEAD
 # Successful login logging
 @receiver(user_logged_in)
 def log_user_login(sender, user, request, **kwargs):
@@ -64,6 +74,17 @@ def log_user_logout(sender, request, user, **kwargs):
 
 
 # Log Task create and update
+=======
+@receiver(user_logged_in)
+def log_user_login(sender, user, request, **kwargs):
+    AuditLog.objects.create(
+        user=user,
+        action="LOGIN",
+        details=f"Logged in from IP: {request.META.get('REMOTE_ADDR', 'Unknown')}"
+    )
+
+
+>>>>>>> d37cbd7bcc9fd181b230781706a15cba0601bf65
 @receiver(post_save, sender=Task)
 def log_task_create_update(sender, instance, created, **kwargs):
     if created:
@@ -80,11 +101,18 @@ def log_task_create_update(sender, instance, created, **kwargs):
     )
 
 
+<<<<<<< HEAD
 # Log Task delete
+=======
+>>>>>>> d37cbd7bcc9fd181b230781706a15cba0601bf65
 @receiver(post_delete, sender=Task)
 def log_task_delete(sender, instance, **kwargs):
     AuditLog.objects.create(
         user=instance.user,
         action="TASK_DELETE",
         details=f"Deleted task: '{instance.title}'"
+<<<<<<< HEAD
     )
+=======
+    )
+>>>>>>> d37cbd7bcc9fd181b230781706a15cba0601bf65

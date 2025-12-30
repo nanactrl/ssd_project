@@ -18,5 +18,8 @@ urlpatterns = [
     path('task-update/<int:pk>/', UpdateTask.as_view(), name='task-update'),
     path('task-delete/<int:pk>/', DeleteTask.as_view(), name='task-delete'),
     path('audit-log/', AuditLogView.as_view(), name='audit_log'),  # ← FINAL MISSING URL
+<<<<<<< HEAD
 
+=======
+>>>>>>> d37cbd7bcc9fd181b230781706a15cba0601bf65
 ]
