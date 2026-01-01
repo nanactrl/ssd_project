@@ -1,0 +1,63 @@
+{% extends 'base/main.html' %}
+{% block content %}
+
+<div class="top-bar">
+    <div>
+        <h1>Welcome {{ request.user|title }}</h1>
+        <h3>You have <i>{{ count }}</i> incomplete item{{ count|pluralize }}</h3>
+    </div>
+
+    {% if request.user.is_authenticated %}
+    <div class="login-logout-btn"><a href="{% url 'logout' %}">Logout<span class="material-symbols-outlined">
+        move_item
+        </span></a></div>
+    {% else %}
+    <div class="login-logout-btn"><a href="{% url 'login' %}">Login</a>
+    {% endif %}
+</div>
+
+
+<hr>
+
+<h1> This is my todo-list</h1>
+<a href="{% url 'create-task' %}">Add a task<span class="material-symbols-outlined">
+    post_add
+    </span>
+</a>
+
+<table>
+    <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    {% for task in todo_tasks %}
+    <tr class="task-row">
+        <td class="table-data-row">
+            {% if task.complete %}
+                <span class="material-symbols-outlined checkbox-icon">select_check_box</span> <!-- Display completed checkbox icon -->
+            {% else %}
+                <span class="material-symbols-outlined checkbox-icon">check_box_outline_blank</span> <!-- Display incomplete checkbox icon -->
+            {% endif %}
+            <span class="task-title-span"><strong class="title-text">{{ task.title|title }}</strong></span>
+        </td>
+        <td><a href="{% url 'task-update' task.id %}"><span class="material-symbols-outlined">settings</span></a></td>
+        <td><a href="{% url 'task-delete' task.id %}"><span class="material-symbols-outlined">delete</span></a></td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="3">No tasks!</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<br>
+<br>
+
+<hr>
+
+<p class="text-center">Return to the homepage  <a id="home-button" href="{% url 'home' %}">Home<span class="material-symbols-outlined">
+    home
+</span></a></p>
+
+{% endblock content %}

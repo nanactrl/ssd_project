@@ -1,0 +1,71 @@
+{% extends "base/main.html" %}
+
+{% block title %}My Profile{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="mb-4 text-center">My Profile</h1>
+
+    <!-- Success message if any (you can add later for editing) -->
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0"><i class="fas fa-user"></i> User Information</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-4"><strong>Username</strong></div>
+                        <div class="col-sm-8">{{ user_profile.username }}</div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-4"><strong>Email</strong></div>
+                        <div class="col-sm-8">{{ user_profile.email|default:"Not provided" }}</div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-4"><strong>Date Joined</strong></div>
+                        <div class="col-sm-8">{{ user_profile.date_joined|date:"d M Y, H:i" }}</div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-4"><strong>Role</strong></div>
+                        <div class="col-sm-8">
+                            {% if request.user.groups.all %}
+                                {% for group in request.user.groups.all %}
+                                    <span class="badge bg-{% if group.name == 'Admin' %}danger{% else %}secondary{% endif %}">
+                                        {{ group.name }}
+                                    </span>
+                                {% endfor %}
+                            {% else %}
+                                <span class="badge bg-secondary">Normal User</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-4"><strong>Active Tasks</strong></div>
+                        <div class="col-sm-8">
+                            <span class="badge bg-info fs-6">{{ incomplete_tasks_count }}</span> incomplete
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <a href="{% url 'tasks' %}" class="btn btn-outline-primary">Back to Tasks</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
