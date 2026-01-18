@@ -55,6 +55,22 @@ This project was created using the following languages and frameworks:
 8. Open the browser and navigate to http://127.0.0.1:8000/ to access the application.
 
 ## Security Features Summary
+1. User Authentication
+   - The application enforces login for access to task management.
+   - Users must register and log in with a valid username and password before they can view or modify their tasks.
+   - This helps ensure that only authorized users access personal data.
+
+2. Secure Password and Account Handling
+   - Passwords are entered via a form where users must type and confirm their password during registration.
+   - This practice reduces input errors and encourages secure account setup.
+  
+3. Session Management
+   - Successful login redirects the user to their dashboard where their tasks are displayed.
+   - Users can log out at any time, ending the authenticated session.
+
+4. Navigation and Access Control
+   - The application only allows navigation to certain pages (like the task list) after successful authentication.
+   - The delete task page also includes navigation logic to avoid unauthorized access or erroneous state transitions.
 
 ## Task Management Workflow
 
