@@ -11,6 +11,9 @@
 
 <hr>
 
+## Project Description
+The Django Secure Task Management Web Application is designed to provide a simple yet powerful platform for managing personal tasks. The application incorporates user authentication, task creation, editing, deletion, and completion tracking, all within a secure and modular environment. The project prioritizes usability, accessibility, and secure development practices, including proper handling of sensitive data and adherence to secure coding standards. The application’s modular structure ensures maintainability and scalability for future development.
+
 ## How to use it
 
 - To be able to use the application you first need to register an account - you will be asked to enter a username and a password.
