@@ -516,7 +516,7 @@ To deploy this Django project, follow these steps to fork and clone the reposito
 8. Open the browser and navigate to http://127.0.0.1:8000/ to access the application.
 
 ### Dependencies
-See `requirements.txt` for full list (e.g., Django 4.x, djangorestframework).
+Open `requirements.txt` for full list (e.g., Django 4.x, djangorestframework).
 
 ### Notes
 - Deactivate venv with `deactivate`.
