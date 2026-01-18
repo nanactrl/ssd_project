@@ -58,12 +58,6 @@ This project was created using the following languages and frameworks:
 
 ## Task Management Workflow
 
-
-
-- If user wish to delete a task, click on the "trash-bin" icon and they will be redirected to a confirmation page where it either click on "delete task" or return back to the "main" task page again.
-  
-## Features
-
 - All pages have a "Home" button that will take the user back to the homepage. Except for the delete task page, it will only have "go back to task list" button to take the yser back to the full task list.
 
 <p align="center">
@@ -113,7 +107,7 @@ This project was created using the following languages and frameworks:
   <img src="base\static\images\completed-icon.png" alt="Home button" width="400">
 </p>
 
-- The user can also delete the task by clicking on the "trash bin" icon button. It will redirect the user to a confirmation page wherether they want to delete the task or not.If the user clicks on the delete button, it will redicted back to the task list with a succesful deleted task. On the delete confirmation page, there is also a way for the user to "go back to task-list" incase the user regretted their choise.
+- If user wish to delete a task, click on the "trash bin" icon and they will be redirected to a confirmation page where it either click on "delete task" or return back to the "main" task page again. If the user clicks on the delete button, it will redicted back to the task list with a succesful deleted task. On the delete confirmation page, there is also a way for the user to "go back to task-list" .
 
 <p align="center">
   <img src="base\static\images\delete-confirmation.png" alt="Home button" width="400">
