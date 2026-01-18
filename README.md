@@ -128,4 +128,14 @@ This project was created using the following languages and frameworks:
 - The user can logout from the dashboard whenver they want which takes the user back to the login page.
 
 ### Dependencies
-Open `requirements.txt` for full list (e.g., Django 4.x, djangorestframework).
+asgiref==3.8.1
+dj-database-url==2.2.0
+Django==6.0
+djangorestframework==3.15.2
+gunicorn==23.0.0
+packaging==24.1
+psycopg[binary]==3.2.1
+sqlparse==0.5.1
+tzdata==2024.2
+wheel==0.45.1
+whitenoise==6.7.0
