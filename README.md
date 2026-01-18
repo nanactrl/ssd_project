@@ -48,6 +48,8 @@ The Django Secure Task Management Web Application is designed to provide a simpl
 
 8. Open the browser and navigate to http://127.0.0.1:8000/ to access the application.
 
+## Security Features Summary
+
 ## How to Use?
 
 - Register an account which require user to enter a username and a password.
