@@ -50,7 +50,7 @@ The Django Secure Task Management Web Application is designed to provide a simpl
 
 ## Security Features Summary
 
-## How to Use?
+## Task Management Workflow
 
 - Register an account which require user to enter a username and a password.
 
@@ -146,6 +146,9 @@ The Django Secure Task Management Web Application is designed to provide a simpl
 </p>
 
 <hr>
+
+### Dependencies
+Open `requirements.txt` for full list (e.g., Django 4.x, djangorestframework).
 
 #### UX design
 The UX design of the Django ToDo App focuses on simplicity and ease of use. Here’s a brief overview of the key design elements:
@@ -516,9 +519,6 @@ To deploy this Django project, follow these steps to fork and clone the reposito
 - Leveraged [Heroku Dev Center](https://devcenter.heroku.com/categories/reference) documentation for debugging purposes.
 
 - Incorporated Google Fonts icons from [Google Fonts](https://fonts.google.com/icons) for iconography throughout the application.
-
-### Dependencies
-Open `requirements.txt` for full list (e.g., Django 4.x, djangorestframework).
 
 ### Notes
 - Deactivate venv with `deactivate`.
