@@ -14,6 +14,40 @@
 ## Project Description
 The Django Secure Task Management Web Application is designed to provide a simple yet powerful platform for managing personal tasks. The application incorporates user authentication, task creation, editing, deletion, and completion tracking, all within a secure and modular environment. The project prioritizes usability, accessibility, and secure development practices, including proper handling of sensitive data and adherence to secure coding standards. The application’s modular structure ensures maintainability and scalability for future development.
 
+## Installation and Running
+
+### Prerequisites
+- Python 3.8 or higher (download from python.org)
+- Git (cloning purposes)
+
+### Installation Steps
+1. Clone the repository:
+   - git clone https://github.com/nanactrl/ssd_project.git
+   - cd ssd_project
+
+2. Create and activate virtual environment:
+   - python -m venv venv
+   - Windows: venv\Scripts\activate.bat
+   - Mac/Linux:source venv/bin/activate
+
+3. Install dependencies:
+   - pip install -r requirements.txt
+
+4. Configure environment variables and edit .env to include your own SECRET_KEY and other configuration values.
+   - Windows: copy .env.example .env
+   - Mac/Linux: cp. env.example .env
+     
+5. Apply database migrations:
+   - python manage.py migrate
+
+6. Create a superuser (for admin access):
+   - python manage.py createsuperuser
+
+7. Start the development server:
+    - python manage.py runserver
+
+8. Open the browser and navigate to http://127.0.0.1:8000/ to access the application.
+
 ## How to Use?
 
 - Register an account which require user to enter a username and a password.
@@ -480,40 +514,6 @@ To deploy this Django project, follow these steps to fork and clone the reposito
 - Leveraged [Heroku Dev Center](https://devcenter.heroku.com/categories/reference) documentation for debugging purposes.
 
 - Incorporated Google Fonts icons from [Google Fonts](https://fonts.google.com/icons) for iconography throughout the application.
-
-## Installation and Running
-
-### Prerequisites
-- Python 3.8 or higher (download from python.org)
-- Git (cloning purposes)
-
-### Installation Steps
-1. Clone the repository:
-   - git clone https://github.com/nanactrl/ssd_project.git
-   - cd ssd_project
-
-2. Create and activate virtual environment:
-   - python -m venv venv
-   - Windows: venv\Scripts\activate.bat
-   - Mac/Linux:source venv/bin/activate
-
-3. Install dependencies:
-   - pip install -r requirements.txt
-
-4. Configure environment variables and edit .env to include your own SECRET_KEY and other configuration values.
-   - Windows: copy .env.example .env
-   - Mac/Linux: cp. env.example .env
-     
-5. Apply database migrations:
-   - python manage.py migrate
-
-6. Create a superuser (for admin access):
-   - python manage.py createsuperuser
-
-7. Start the development server:
-    - python manage.py runserver
-
-8. Open the browser and navigate to http://127.0.0.1:8000/ to access the application.
 
 ### Dependencies
 Open `requirements.txt` for full list (e.g., Django 4.x, djangorestframework).
