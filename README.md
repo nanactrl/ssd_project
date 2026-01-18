@@ -484,30 +484,31 @@ To deploy this Django project, follow these steps to fork and clone the reposito
 ## Installation and Running
 
 ### Prerequisites
-- Python 3.8+ (download from python.org)
-- Git (for cloning)
+- Python 3.8 or higher (download from python.org)
+- Git (cloning purposes)
 
 ### Setup Steps
 1. Clone the repo:git clone https://github.com/nanactrl/ssd_project.git
 cd ssd_project
 
 2. Create and activate virtual environment:
-python -m venv venv
-Windows:venv\Scripts\activate.bat
-Mac/Linux:source venv/bin/activate
+   - python -m venv venv
+   - Windows: venv\Scripts\activate.bat
+   - Mac/Linux:source venv/bin/activate
 
-3. Install dependencies: pip install -r requirements.txt
+4. Install dependencies: pip install -r requirements.txt
 
-4. Copy .env.example to .env and edit with your values (e.g., SECRET_KEY):
-copy .env.example .env  # Windows; or cp on Mac/Linux
+5. Configure environment variables and edit .env to include your own SECRET_KEY and other configuration values
+   - copy .env.example .env # Windows
+   - cp. env.example .env   # Mac/Linux
+     
+6. Apply database migrations:python manage.py migrate
 
-5. Run migrations and create superuser:
-python manage.py migrate
-python manage.py createsuperuser
+7. Create a superuse (for admin access): python manage.py createsuperuser
 
-6. Start the server:python manage.py runserver
+8. Start the development server:python manage.py runserver
 
-Open http://127.0.0.1:8000/ in your browser.
+9. Open the browser and navigate to http://127.0.0.1:8000/ to access the application.
 
 ### Dependencies
 See `requirements.txt` for full list (e.g., Django 4.x, djangorestframework).
