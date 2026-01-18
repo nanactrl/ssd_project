@@ -14,6 +14,17 @@
 ## Project Description
 The Django Secure Task Management Web Application is designed to provide a simple yet powerful platform for managing personal tasks. The application incorporates user authentication, task creation, editing, deletion, and completion tracking, all within a secure and modular environment. The project prioritizes usability, accessibility, and secure development practices, including proper handling of sensitive data and adherence to secure coding standards. The application’s modular structure ensures maintainability and scalability for future development.
 
+### Languages and Frameworks
+This project was created using the following languages and frameworks:
+
+- Django as the Python web framework.
+- Python as the backend programming language.
+- HTML as the markup language and templating language.
+- CSS as the style sheet language.
+- Bootstrap 5 as the CSS framework.
+- JavaScript to create footer element that changes
+- SQLite to store user data (Relational database)
+
 ## Installation and Running
 
 ### Prerequisites
@@ -342,19 +353,6 @@ This project has been thoroughly tested across various web browsers to ensure fu
 - JavaScript: The JavaScript code for this project passed and got validated using the JSHint with no warnings or errors.
 
 - Python code passes Linter with "All clear, no errors found". Python code passes PEP8 without issues.
-
-
-### Languages and Frameworks
-This project was created using the following languages and frameworks:
-
-- Django as the Python web framework.
-- Python as the backend programming language.
-- HTML as the markup language and templating language.
-- CSS as the style sheet language.
-- Bootstrap 5 as the CSS framework.
-- JavaScript to create footer element that changes
-- SQLite to store user data (Relational database)
-
 
 ### Manual testing write up
 #### Test Scenarios and Test Cases
