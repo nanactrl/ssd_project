@@ -487,7 +487,7 @@ To deploy this Django project, follow these steps to fork and clone the reposito
 - Python 3.8 or higher (download from python.org)
 - Git (cloning purposes)
 
-### Setup Steps
+### Installation Steps
 1. Clone the repository:
    - git clone https://github.com/nanactrl/ssd_project.git
    - cd ssd_project
