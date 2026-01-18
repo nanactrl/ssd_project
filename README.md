@@ -58,8 +58,6 @@ This project was created using the following languages and frameworks:
 
 ## Task Management Workflow
 
-- Register an account which require user to enter a username and a password.
-
 - When the login is successful, user will be redirected to the "main application". For a newly created account, there are no tasks created yet.
 
 - Click "add a task" button to create a task. This will redirect user to a page where they can create a task by giving it a title, description and a check or un-check status. Leave the checkbox uncheck if it is not done yet.
@@ -72,7 +70,7 @@ This project was created using the following languages and frameworks:
   
 ## Features
 
-- All pages should prioritize good UX by ensuring that users never have to rely on the browser's 'back' button to navigate to a previous page. Instead, each page should provide a clearly labeled link for this purpose, contributing to a seamless user experience.
+- Register an account which require user to enter a username and a password.
 
 - All the pages have a "home" button that takes the user back to the homepage - except the "delete-task"-page - that page only haves a "go back to task list" button that can take the user back to the full-task-list.
 
@@ -80,8 +78,7 @@ This project was created using the following languages and frameworks:
   <img src="base\static\images\home-button.png" alt="Home button" width="400">
 </p>
 
-- The loginpage has input for users that already has registred themself - they can input username and password and after that klick the "login"-button. But incase they have not registrered themselfs as users, they are promted by a text saying "Are you a new user and need to create an account?" and then a button that takes the user to the register-user-page.
-
+- User will redirect to login page where user need to input their username and password. In case user have not registrered themselves as users, they are promted by a text saying "Are you a new user and need to create an account?". The "Register Here" button will take the user to the register user page.
 <p align="center">
   <img src="base\static\images\login.png" alt="Home button" width="400">
 </p>
