@@ -127,7 +127,5 @@ This project was created using the following languages and frameworks:
 
 - The user can logout from the dashboard whenver they want which takes the user back to the login page.
 
-<hr>
-
 ### Dependencies
 Open `requirements.txt` for full list (e.g., Django 4.x, djangorestframework).
