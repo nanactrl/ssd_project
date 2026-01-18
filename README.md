@@ -5,10 +5,6 @@
   <img src="base\static\images\am-i-responsive.png" alt="Responsive website" width="600">
 </p>
 
-[This is the link](https://django-auth-crud-app2-d11a949b5519.herokuapp.com/) to the deployed webpage/URL.
-
-[This is the link](https://github.com/markohautala/django-auth-crud-app) to the GitHub repository for this project.
-
 <hr>
 
 ## Project Description
