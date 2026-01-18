@@ -14,22 +14,20 @@
 ## Project Description
 The Django Secure Task Management Web Application is designed to provide a simple yet powerful platform for managing personal tasks. The application incorporates user authentication, task creation, editing, deletion, and completion tracking, all within a secure and modular environment. The project prioritizes usability, accessibility, and secure development practices, including proper handling of sensitive data and adherence to secure coding standards. The application’s modular structure ensures maintainability and scalability for future development.
 
-## How to use it
+## How to Use?
 
-- To be able to use the application you first need to register an account - you will be asked to enter a username and a password.
+- Register an account which require user to enter a username and a password.
 
-- When the login is successful, then you are redirected to the "main application". But for a newly created account, there are no tasks created yet.
+- When the login is successful, user will be redirected to the "main application". For a newly created account, there are no tasks created yet.
 
-- You need to create a task by clicking the button that says "add a task". This will redirect you to a page where you can create a task by giving it a title, description and a check or un-check status. For starters it's maybe relevant that the task is not yet done - so leave it unchecked.
+- Click "add a task" button to create a task. This will redirect user to a page where they can create a task by giving it a title, description and a check or un-check status. Leave the checkbox uncheck if it is not done yet.
 
-- After submitting the task, you are redirected back to the task-list where you should see your newly created task.
+- After submitting the task, user will be redirected back to the task-list where they can see the newly created task.
 
-- when the task is completed you can edit the task by clicking on the "gear"-icon and edit the task by either adding more info to it or marking it as completed. If you mark it as completed, and re-submit, then you will be redirected back to the task-list and the task is updated with a check-icon, signaling that the task is completed.
+- When the task is completed, user can edit the task by clicking on the "gear" icon and edit the task by adding more info to it or marking it as completed. If user mark it as completed, and re-submit, then they will be redirected back to the task-list and the task is updated with a check-icon, signaling that the task is completed.
 
-- If you wish to delete a task totally that is possible. Just click on the "trash-bin"-icon next to the task you want to delete, and you will be redirected to a confirmation page where you can either click on "delete task" or you can go back to the "main" task page again.
-
-
-
+- If user wish to delete a task, click on the "trash-bin" icon and they will be redirected to a confirmation page where it either click on "delete task" or return back to the "main" task page again.
+  
 ## Features
 
 - All pages should prioritize good UX by ensuring that users never have to rely on the browser's 'back' button to navigate to a previous page. Instead, each page should provide a clearly labeled link for this purpose, contributing to a seamless user experience.
