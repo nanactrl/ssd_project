@@ -58,8 +58,6 @@ This project was created using the following languages and frameworks:
 
 ## Task Management Workflow
 
-- When the login is successful, user will be redirected to the "main application". For a newly created account, there are no tasks created yet.
-
 - Click "add a task" button to create a task. This will redirect user to a page where they can create a task by giving it a title, description and a check or un-check status. Leave the checkbox uncheck if it is not done yet.
 
 - After submitting the task, user will be redirected back to the task-list where they can see the newly created task.
@@ -70,20 +68,18 @@ This project was created using the following languages and frameworks:
   
 ## Features
 
-- Register an account which require user to enter a username and a password.
-
-- All the pages have a "home" button that takes the user back to the homepage - except the "delete-task"-page - that page only haves a "go back to task list" button that can take the user back to the full-task-list.
+- All pages have a "Home" button that will take the user back to the homepage. Except for the delete task page, it will only have "go back to task list" button to take the yser back to the full task list.
 
 <p align="center">
   <img src="base\static\images\home-button.png" alt="Home button" width="400">
 </p>
 
-- User will redirect to login page where user need to input their username and password. In case user have not registrered themselves as users, they are promted by a text saying "Are you a new user and need to create an account?". The "Register Here" button will take the user to the register user page.
+- User will redirect to login page where user need to input their username and password. In case user have not registrered themselves as users, they are promted with a text saying "Are you a new user and need to create an account?". A new user needs to click "Register Here" button to register an account.
 <p align="center">
   <img src="base\static\images\login.png" alt="Home button" width="400">
 </p>
 
-- The same as above, but for the register-user-page. There is a form that the user can fill out with username and then a password and a re-type for the password - and of course a button that says "register". But under that form, there is a text promting already created users with the text "Do you already have an account?" and then a login-button that takes the user to the login-page so that the user can login instead.
+- This is a form that user can fill out the username, password and a re-type the password. But under the form, there is a text promting already created users with the text "Do you already have an account?" and then a "Login" button that takes the user to the login page so that the user can login instead.
 
 <p align="center">
   <img src="base\static\images\register.png" alt="Home button" width="400">
@@ -93,8 +89,7 @@ This project was created using the following languages and frameworks:
   <img src="base\static\images\register-2.png" alt="Home button" width="400">
 </p>
 
-
-- When a user has logged-in successfully - then the user is redirected to their task-dashboard. Here they can view all their tasks.
+- When the login is successful, user will be redirected to the task dashboard. They can view all the task, but for a newly created account, there are no tasks created yet.
 
 <p align="center">
   <img src="base\static\images\task-page.png" alt="Home button" width="400">
