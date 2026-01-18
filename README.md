@@ -58,11 +58,7 @@ This project was created using the following languages and frameworks:
 
 ## Task Management Workflow
 
-- Click "add a task" button to create a task. This will redirect user to a page where they can create a task by giving it a title, description and a check or un-check status. Leave the checkbox uncheck if it is not done yet.
 
-- After submitting the task, user will be redirected back to the task-list where they can see the newly created task.
-
-- When the task is completed, user can edit the task by clicking on the "gear" icon and edit the task by adding more info to it or marking it as completed. If user mark it as completed, and re-submit, then they will be redirected back to the task-list and the task is updated with a check-icon, signaling that the task is completed.
 
 - If user wish to delete a task, click on the "trash-bin" icon and they will be redirected to a confirmation page where it either click on "delete task" or return back to the "main" task page again.
   
@@ -95,19 +91,19 @@ This project was created using the following languages and frameworks:
   <img src="base\static\images\task-page.png" alt="Home button" width="400">
 </p>
 
-- They can click on the button "Add a task" to create a new task which will take the user to the create-task-page. Here the user can create a task by giving the task a title, a description (or not) and then uncheck or check the "completed" check-input.
+- User can click "Add a task" button to create a new task which will take the user to the create task page. User can create a task by giving the task a title, a description, and then check or uncheck the "completed" checkbox. Leave the checkbox uncheck if it is not done yet.
 
 <p align="center">
   <img src="base\static\images\create-task.png" alt="Home button" width="400">
 </p>
 
-- Once the user clicks on "Create" then the user is re-directed back to the task-list and they can now see their task they just created.
+- Once the user clicks "Create task" button, they will be redirected back to the task list and can see the task that just being created.
 
 <p align="center">
   <img src="base\static\images\updated-taskpage.png" alt="Home button" width="400">
 </p>
 
-- When a user is at the dashboard (task-list), they can also delete and edit the task. To be able to edit a task the user can click on the button next to the task (settings-icon) and then the user is redirected to the task and the form for that specific task. The user can edit any of the field and re-submit/edit the task. They can for example klick on the "completed" check-box and then resubmit and then the user is redirected to the dashboard and now the user can see a "tick"/check next to the task which is giving a visual sensation of completion which is a choise for a good UX.
+- When the task is completed, user can edit the task by clicking on the "gear" icon and edit the task by adding more info to it or marking it as completed. If user mark it as completed, and re-submit, then they will be redirected back to the dashboard and the task is updated with a check-icon, signaling that the task is completed.
 
 <p align="center">
   <img src="base\static\images\complete-task.png" alt="Home button" width="400">
@@ -117,15 +113,13 @@ This project was created using the following languages and frameworks:
   <img src="base\static\images\completed-icon.png" alt="Home button" width="400">
 </p>
 
-- The user can also delete tasks by clicking on the "trash-bin-icon" next to the task - this will redirect the user to a confirmation-page where the user is given a question if the user wants to delete the task - if the user clicks on the delete button, then the user is redicted back to the task-list with a succesful deleted task. On the delete-confirmation page, there is also a way for the user to "go back to task-list" incase the user regretted their choise - which is part of good UX aswell.
+- The user can also delete the task by clicking on the "trash bin" icon button. It will redirect the user to a confirmation page wherether they want to delete the task or not.If the user clicks on the delete button, it will redicted back to the task list with a succesful deleted task. On the delete confirmation page, there is also a way for the user to "go back to task-list" incase the user regretted their choise.
 
 <p align="center">
   <img src="base\static\images\delete-confirmation.png" alt="Home button" width="400">
 </p>
 
-- The user can whenever they want logout from the dashboard which takes the user back to the login-page.
-
-- On the homepage there is text that gives information about the application and also reassures the user that their personal information is secretley and kept private and safe - this gives the user trust for the service and application. Under that section, there is a carousel giving a "high-tech" feeling towards the appliction - the pictures are not of the application itself but just placeholder images that gives a good design and modern feeling towards the webpage/application.
+- On the homepage, there is text that gives information about the application and also reassures the user that their personal information is secretley kept private and safe.
 
 <p align="center">
   <img src="base\static\images\homepage.png" alt="Home button" width="400">
@@ -137,11 +131,7 @@ This project was created using the following languages and frameworks:
   <img src="base\static\images\homepage-login-register.png" alt="Home button" width="400">
 </p>
 
-- Under this section comes the footer - here is a copyright promt and two icons - one for my personal GitHub nad one for my personal LinkedIn profile.
-
-<p align="center">
-  <img src="base\static\images\footer.png" alt="Home button" width="400">
-</p>
+- The user can logout from the dashboard whenver they want which takes the user back to the login page.
 
 <hr>
 
